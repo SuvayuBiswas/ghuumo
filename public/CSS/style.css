@@ -60,14 +60,11 @@ body {
   box-shadow: 0 4px 6px rgba(221, 122, 82, 0.3);
   transition: all 0.2s ease;
 
-  /* FIX: Forces icon and text to stay in one line */
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.5rem;
-  /* Space between icon and text */
   white-space: nowrap !important;
-  /* Prevents text from breaking to next line */
 }
 
 .add-btn:hover,
@@ -81,7 +78,6 @@ body {
 .search-btn i {
   font-size: 0.9rem;
   margin: 0;
-  /* Removes default margin issues */
 }
 
 .btns {
@@ -94,10 +90,8 @@ body {
 .btns form {
   margin: 0;
   display: flex;
-  /* Ensures the button fills the form container */
 }
 
-/* --- LISTING CARDS --- */
 .listing-card {
   border: none !important;
   margin-bottom: 2rem;
@@ -235,12 +229,9 @@ body {
   margin-right: 1rem;
 }
 
-/* --- SHOW PAGE --- */
 .show-img {
   height: auto !important;
-  /* Height adjusts to the image */
   max-height: 80vh;
-  /* Cap it so it doesn't take over the whole screen */
   width: 100%;
   object-fit: contain;
   border-radius: 1rem !important;
@@ -269,21 +260,15 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Remove default link styling from filter links */
 #filters a {
   text-decoration: none !important;
-  /* Removes underline */
   color: inherit !important;
-  /* Inherits black/grey instead of link blue */
 }
 
 .filter {
   display: flex;
-  /* Ensures icon and text align properly */
   flex-direction: column;
-  /* Stack icon on top of text */
   align-items: center;
-  /* Center align items */
   text-align: center;
   flex: 0 0 auto;
   cursor: pointer;
@@ -291,17 +276,14 @@ body {
   opacity: 0.7;
   transition: 0.2s ease;
   color: #222222;
-  /* Default dark color */
 }
 
 .filter:hover {
   opacity: 1;
   transform: translateY(-2px);
   color: #fe5d4e;
-  /* Changes text color to orange on hover */
 }
 
-/* Force the icon inside filter to also change color on hover */
 .filter:hover i {
   color: #fe5d4e;
 }
@@ -313,7 +295,6 @@ body {
 .filter i {
   font-size: 24px;
   color: #222222;
-  /* Icon starts black/dark grey */
   margin-bottom: 0.2rem;
 }
 
@@ -392,7 +373,6 @@ body {
 .form-select:focus {
   border-color: #fe5d4e;
   box-shadow: 0 0 0 0.25rem rgba(221, 122, 82, 0.25);
-  /* Orange glow */
 }
 
 /* 3. Image Preview Thumbnail */
@@ -406,23 +386,18 @@ body {
 
 .preview-img {
   height: 150px;
-  /* Fixed small height */
   width: 200px;
-  /* Fixed small width */
   object-fit: cover;
-  /* Crop cleanly */
   border-radius: 0.5rem;
 }
 
-/* 4. Textarea fix */
 textarea.form-control {
   border-radius: 1rem !important;
 }
 
-/* --- FLASH MESSAGES (Alerts) --- */
+/* --- FLASH MESSAGES --- */
 .alert {
   border-radius: 1rem !important;
-  /* Matches your rounded cards/inputs */
   border: none !important;
   font-weight: 500;
   padding: 1rem 1.5rem;
@@ -430,13 +405,13 @@ textarea.form-control {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Success (Green) - Customizing the green to be less neon */
+/* Success (Green) */
 .alert-success {
   background-color: #e3f9e5 !important;
   color: #1f7a36 !important;
 }
 
-/* Error (Red) - Customizing to be softer */
+/* Error (Red) */
 .alert-error,
 .alert-danger {
   background-color: #ffebee !important;

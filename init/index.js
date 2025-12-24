@@ -1,4 +1,3 @@
-// 1. Load environment variables
 if (process.env.NODE_ENV != "production") {
   require("dotenv").config();
 }
@@ -8,8 +7,6 @@ const initData = require("./ghuumo.listings.json");
 const Listing = require("../models/listing");
 const User = require("../models/user");
 
-// 2. Use the environment variable (Secure)
-// const MONGO_URL = "mongodb+srv://SuvayuBiswas:Travel2025@..."; // <--- DELETE THIS LINE
 const MONGO_URL = process.env.ATLASDB_URL; 
 
 async function main() {
@@ -20,7 +17,6 @@ async function main() {
 
     await initDB();
     
-    // mongoose.connection.close();
   } catch (err) {
     console.error("❌ Connection Failed:", err);
   }
@@ -28,7 +24,6 @@ async function main() {
 
 const initDB = async () => {
   try {
-    // Clear Data
     await Listing.deleteMany({});
     await User.deleteMany({});
     console.log("Step 1: Cleared old listings and users.");
