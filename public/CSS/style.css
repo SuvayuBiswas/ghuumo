@@ -1,0 +1,498 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fcfcfc;
+}
+
+.container {
+  flex: 1;
+}
+
+/* --- NAVBAR & SEARCH --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.fa-compass {
+  color: #fe5d4e;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.nav-link {
+  color: #222222 !important;
+  font-weight: 500;
+}
+
+/* FIX: Search Input */
+.search-input {
+  border-radius: 50px !important;
+  padding: 0.7rem 3rem 0.7rem 3rem;
+  background-color: #f7f7f7;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.search-input:focus {
+  background-color: white;
+  border-color: #fe5d4e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* --- BUTTONS --- */
+.add-btn,
+.edit-btn,
+.search-btn {
+  background-color: #fe5d4e !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(221, 122, 82, 0.3);
+  transition: all 0.2s ease;
+
+  /* FIX: Forces icon and text to stay in one line */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem;
+  /* Space between icon and text */
+  white-space: nowrap !important;
+  /* Prevents text from breaking to next line */
+}
+
+.add-btn:hover,
+.edit-btn:hover,
+.search-btn:hover {
+  background-color: #fe5d4e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(221, 122, 82, 0.4);
+}
+
+.search-btn i {
+  font-size: 0.9rem;
+  margin: 0;
+  /* Removes default margin issues */
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btns form {
+  margin: 0;
+  display: flex;
+  /* Ensures the button fills the form container */
+}
+
+/* --- LISTING CARDS --- */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.edit-btn,
+.delete-btn {
+  border-radius: 50px !important;
+  padding: 0.6rem 2rem !important;
+  font-weight: 600;
+  white-space: nowrap;
+  border: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  min-width: 140px;
+}
+
+.edit-btn {
+  background-color: #fe5d4e !important;
+  color: white !important;
+}
+
+.delete-btn {
+  background-color: #222 !important;
+  color: white !important;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+.listing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.listing-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.4;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.listing-price {
+  font-weight: 700;
+  color: #222;
+}
+
+.listing-period {
+  font-weight: 400;
+  color: #717171;
+  font-size: 0.9rem;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  height: 20rem;
+  transition: transform 0.5s ease;
+}
+
+.listing-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1rem 0.5rem !important;
+}
+
+.card-text p {
+  font-weight: 400;
+  color: #555;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  background-color: white;
+  opacity: 0.2;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- FOOTER --- */
+.f-info {
+  text-align: center;
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem 0;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+/* --- SHOW PAGE --- */
+.show-img {
+  height: auto !important;
+  /* Height adjusts to the image */
+  max-height: 80vh;
+  /* Cap it so it doesn't take over the whole screen */
+  width: 100%;
+  object-fit: contain;
+  border-radius: 1rem !important;
+}
+
+.show-card {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* --- MAP --- */
+#map {
+  width: 100%;
+  height: 350px;
+  border-radius: 1rem;
+}
+
+/* --- FILTERS (FIXED) --- */
+#filters {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 2rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Remove default link styling from filter links */
+#filters a {
+  text-decoration: none !important;
+  /* Removes underline */
+  color: inherit !important;
+  /* Inherits black/grey instead of link blue */
+}
+
+.filter {
+  display: flex;
+  /* Ensures icon and text align properly */
+  flex-direction: column;
+  /* Stack icon on top of text */
+  align-items: center;
+  /* Center align items */
+  text-align: center;
+  flex: 0 0 auto;
+  cursor: pointer;
+  scroll-snap-align: start;
+  opacity: 0.7;
+  transition: 0.2s ease;
+  color: #222222;
+  /* Default dark color */
+}
+
+.filter:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  color: #fe5d4e;
+  /* Changes text color to orange on hover */
+}
+
+/* Force the icon inside filter to also change color on hover */
+.filter:hover i {
+  color: #fe5d4e;
+}
+
+#filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter i {
+  font-size: 24px;
+  color: #222222;
+  /* Icon starts black/dark grey */
+  margin-bottom: 0.2rem;
+}
+
+.filter p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#filters-wrapper {
+  position: relative;
+  padding: 0 5px;
+}
+
+
+@media (min-width: 768px) {
+  #filters {
+    justify-content: center;
+    overflow-x: visible;
+    white-space: normal;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #filters {
+    justify-content: flex-start;
+  }
+}
+
+/* --- SEARCH SUGGESTIONS --- */
+.suggestions-list {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-height: 250px;
+  overflow-y: auto;
+  display: none;
+  z-index: 99;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item:hover {
+  background: #f7f7f7;
+}
+
+/* --- EDIT PAGE STYLES --- */
+
+/* 1. Form Labels */
+.form-label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+/* 2. Rounded Inputs */
+.form-control,
+.form-select {
+  border-radius: 0.75rem !important;
+  /* Soft rounded corners */
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #fe5d4e;
+  box-shadow: 0 0 0 0.25rem rgba(221, 122, 82, 0.25);
+  /* Orange glow */
+}
+
+/* 3. Image Preview Thumbnail */
+.image-preview-container {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: inline-block;
+  border: 1px dashed #ccc;
+}
+
+.preview-img {
+  height: 150px;
+  /* Fixed small height */
+  width: 200px;
+  /* Fixed small width */
+  object-fit: cover;
+  /* Crop cleanly */
+  border-radius: 0.5rem;
+}
+
+/* 4. Textarea fix */
+textarea.form-control {
+  border-radius: 1rem !important;
+}
+
+/* --- FLASH MESSAGES (Alerts) --- */
+.alert {
+  border-radius: 1rem !important;
+  /* Matches your rounded cards/inputs */
+  border: none !important;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Success (Green) - Customizing the green to be less neon */
+.alert-success {
+  background-color: #e3f9e5 !important;
+  color: #1f7a36 !important;
+}
+
+/* Error (Red) - Customizing to be softer */
+.alert-error,
+.alert-danger {
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+}
+
+/* --- MOBILE MENU ADJUSTMENTS --- */
+/* --- MOBILE VIEW --- */
+@media (max-width: 767px) {
+
+  /* 1. Fix Search Bar: Put Input and Button side-by-side */
+  #searchForm {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Space between input and button */
+    width: 100%;
+  }
+
+  .search-input {
+    width: auto !important;
+    flex-grow: 1;
+    /* Makes input fill the remaining space */
+    margin: 0 !important;
+    /* Remove old margins */
+  }
+
+  .search-btn {
+    width: auto !important;
+    /* Button only takes necessary space */
+    margin-top: 0 !important;
+    /* Remove top margin */
+    padding: 0.7rem 1.2rem !important;
+    /* Slightly compact padding */
+  }
+
+  /* 2. Fix Filters: Start from left */
+  #filters {
+    justify-content: flex-start !important;
+    padding: 1rem 1rem;
+    gap: 1.5rem;
+  }
+
+  /* 3. Adjust Fades */
+  .scroll-fade-left {
+    width: 20px;
+    background: linear-gradient(to right, white, transparent);
+  }
+
+  .scroll-fade-right {
+    width: 40px;
+  }
+
+  /* 4. Navbar Spacing */
+  .navbar-collapse {
+    background-color: white;
+    padding-bottom: 1rem;
+  }
+}

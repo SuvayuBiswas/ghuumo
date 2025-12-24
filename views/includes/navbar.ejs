@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md bg-body-light sticky-top border-bottom">
+  <div class="container-fluid">
+
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <img src="/images/Ghuumo-logo.png" alt="Ghuumo" height="50" style="object-fit: cover;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-3">
+        <a class="nav-link" href="/listings">Explore</a>
+
+
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex position-relative" id="searchForm" autocomplete="off">
+    <input
+        class="form-control me-2 search-input"
+        id="locationSearch"
+        type="search"
+        placeholder="Search location"
+    />
+
+    <button class="btn search-btn" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i> Search
+    </button>
+    <div id="suggestions-box" class="suggestions-list"></div>
+</form>
+
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Add your home</a>
+        <% if(!currUser) { %>
+          <a class="nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <% } %>
+            <% if(currUser) { %>
+              <a class="nav-link" href="/logout"><b>Log out</b></a>
+              <% } %>
+      </div>
+    </div>
+
+  </div>
+</nav>

@@ -1,0 +1,22 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row mt-4">
+    <div class="col-12 col-md-6 offset-md-3">
+        <h2 class="mb-4 text-center" style="font-weight: 700; color: #222;">Login to Ghuumo</h2>
+        
+        <form method="POST" action="/login" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input name="username" id="username" type="text" class="form-control" required />
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" id="password" type="password" class="form-control" required />
+            </div>
+
+            <button class="btn add-btn mt-3 px-5">Login</button>
+        </form>
+    </div>
+</div>
