@@ -15,24 +15,25 @@
 
 
       </div>
-      <div class="navbar-nav ms-auto">
+      <div class="navbar-nav ms-auto align-items-center gap-3">
         <form class="d-flex position-relative" id="searchForm" autocomplete="off">
-    <input
-        class="form-control me-2 search-input"
-        id="locationSearch"
-        type="search"
-        placeholder="Search location"
-    />
+          <input class="form-control me-2 search-input" id="locationSearch" type="search"
+            placeholder="Search location" />
 
-    <button class="btn search-btn" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i> Search
-    </button>
-    <div id="suggestions-box" class="suggestions-list"></div>
-</form>
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+          <div id="suggestions-box" class="suggestions-list"></div>
+        </form>
 
       </div>
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Add your home</a>
+        <a href="/listings/new" class="add-home-btn">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add your home</span>
+        </a>
+
+
         <% if(!currUser) { %>
           <a class="nav-link" href="/signup"><b>Sign up</b></a>
           <a class="nav-link" href="/login"><b>Log in</b></a>

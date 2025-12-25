@@ -132,6 +132,71 @@ body {
   opacity: 0.9;
 }
 
+.add-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  background-color: rgba(254, 93, 78, 0.08); /* soft tint */
+  color: #fe5d4e;
+
+  border: 1px solid transparent;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.add-home-btn i {
+  font-size: 0.75rem;
+}
+
+.add-home-btn:hover {
+  background-color: #fe5d4e;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(254, 93, 78, 0.35);
+}
+
+
+@media (max-width: 767px) {
+
+  .add-home-btn {
+    width: fit-content;
+    margin: 0.5rem 0;
+
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+
+    background-color: rgba(254, 93, 78, 0.1);
+    color: #fe5d4e;
+
+    border-radius: 999px;
+  }
+
+}
+@media (max-width: 767px) {
+  .navbar-collapse {
+    padding: 0.75rem 0;
+  }
+
+  .navbar-nav {
+    gap: 0.4rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+
+
 .listing-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -395,6 +460,9 @@ textarea.form-control {
   border-radius: 1rem !important;
 }
 
+
+
+
 /* --- FLASH MESSAGES --- */
 .alert {
   border-radius: 1rem !important;
@@ -469,5 +537,35 @@ textarea.form-control {
   .navbar-collapse {
     background-color: white;
     padding-bottom: 1rem;
+  }
+}
+
+/* --- MOBILE NAVBAR FIXES --- */
+@media (max-width: 767px) {
+
+  /* Search form layout */
+  #searchForm {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 0.45rem 0.9rem !important;
+    font-size: 0.85rem;
+    border-radius: 999px !important;
+  }
+
+  .search-btn {
+    padding: 0.45rem 0.8rem !important;
+    font-size: 0.8rem;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .search-btn i {
+    font-size: 0.8rem;
   }
 }
